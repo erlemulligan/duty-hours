@@ -12,8 +12,14 @@
   "devDependencies": {
     "css-loader": "^0.26.0",
     "extract-text-webpack-plugin": "^1.0.1",
+    "postcss-browser-reporter": "^0.5.0",
+    "postcss-cssnext": "^2.8.0",
+    "postcss-import": "^8.2.0",
     "postcss-loader": "^1.1.1",
+    "postcss-reporter": "^2.0.0",
+    "postcss-url": "^5.1.2",
     "style-loader": "^0.13.1",
+    "stylelint": "^7.6.0",
     "webpack": "^1.13.3"
   }
 }

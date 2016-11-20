@@ -34,10 +34,25 @@ module.exports = {
       {
         test: /\.css$/,
         exclude: /node_modules/,
-        loader: extractCss.extract('style', 'css'),
+        loader: extractCss.extract('style', ['css', 'postcss']),
       },
     ],
 
+  },
+
+  postcss: function(webpack) {
+    return [
+      require('postcss-import')({
+        plugins: [
+          require('stylelint')()
+        ],
+        addDependencyTo: webpack
+      }),
+      require('postcss-url')(),
+      require('postcss-cssnext')({ browsers: ['> 2%'] }),
+      require('postcss-browser-reporter')(),
+      require('postcss-reporter')({ clearMessages: true }),
+    ]
   },
 
   plugins: [
