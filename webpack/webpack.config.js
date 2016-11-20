@@ -55,6 +55,7 @@ module.exports = {
         plugins: [
           require('stylelint')()
         ],
+        addDependencyTo: webpack
       }),
       require('postcss-url')(),
       require('postcss-cssnext')({ browsers: ['> 2%'] }),
