@@ -28,7 +28,6 @@ module.exports = {
 
   module: {
     preLoaders: [
-
     ],
     loaders: [
       {
@@ -46,12 +45,11 @@ module.exports = {
         plugins: [
           require('stylelint')()
         ],
-        addDependencyTo: webpack
       }),
       require('postcss-url')(),
       require('postcss-cssnext')({ browsers: ['> 2%'] }),
       require('postcss-browser-reporter')(),
-      require('postcss-reporter')({ clearMessages: true }),
+      require('postcss-reporter')()
     ]
   },
 
