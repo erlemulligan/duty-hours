@@ -31,6 +31,16 @@ module.exports = {
     ],
     loaders: [
       {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loaders: ['babel-loader', 'eslint-loader']
+      },
+      {
+        test: /\.jsx$/,
+        exclude: /node_modules/,
+        loaders: ['babel-loader', 'eslint-loader']
+      },
+      {
         test: /\.css$/,
         exclude: /node_modules/,
         loader: extractCss.extract('style', ['css', 'postcss']),
@@ -56,6 +66,5 @@ module.exports = {
   plugins: [
     extractCss
   ]
-
 
 };
