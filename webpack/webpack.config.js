@@ -51,16 +51,17 @@ module.exports = {
 
   postcss: function(webpack) {
     return [
+      require('stylelint')(),
       require('postcss-import')({
         plugins: [
-          require('stylelint')()
+          require('stylelint')(),
         ],
         addDependencyTo: webpack
       }),
       require('postcss-url')(),
       require('postcss-cssnext')({ browsers: ['> 2%'] }),
       require('postcss-browser-reporter')(),
-      require('postcss-reporter')()
+      require('postcss-reporter')({ clearMessages: true })
     ]
   },
 
