@@ -16,6 +16,10 @@ var config = {
 module.exports = {
   context: path.resolve(config.srcPath),
 
+  resolve: {
+    extensions: ['', '.js', '.jsx']
+  },
+
   entry: {
     bundle: [config.jsPath + 'app.js', config.cssPath + 'app.css'],
   },
@@ -39,6 +43,10 @@ module.exports = {
         test: /\.jsx$/,
         exclude: /node_modules/,
         loaders: ['babel-loader', 'eslint-loader']
+      },
+      {
+        test: /\.json$/,
+        loader: 'json-loader'
       },
       {
         test: /\.css$/,
