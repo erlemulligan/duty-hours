@@ -1,0 +1,1 @@
+/* this will be the reactjs template to display the duty hours analysis results */
