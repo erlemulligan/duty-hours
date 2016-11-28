@@ -21,7 +21,7 @@ module.exports = {
   },
 
   entry: {
-    bundle: [config.jsPath + 'app.js', config.cssPath + 'app.css'],
+    bundle: [config.jsPath + 'app.jsx', config.cssPath + 'app.css'],
   },
 
   output: {
@@ -77,7 +77,8 @@ module.exports = {
     extractCss,
     new webpack.ProvidePlugin({
       $: 'jquery',
-      jQuery: 'jquery'
+      jQuery: 'jquery',
+      'window.jQuery': 'jquery',
     })
   ]
 
