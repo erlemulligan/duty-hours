@@ -78,10 +78,6 @@
 
 	var _routes2 = _interopRequireDefault(_routes);
 
-	var _dutyHoursRules = __webpack_require__(546);
-
-	var _dutyHoursRules2 = _interopRequireDefault(_dutyHoursRules);
-
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	(0, _reactDom.render)(_react2.default.createElement(_reactRouter.Router, { history: _reactRouter.browserHistory, routes: _routes2.default }), document.getElementById('app'));
@@ -45752,43 +45748,7 @@
 	exports.default = DateRangeForm;
 
 /***/ },
-/* 546 */
-/***/ function(module, exports) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	/* duty hours rules go here */
-
-	var dutyHoursRules = function dutyHoursRules() {
-	  var maxHoursPerWeek = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 80;
-	  var weekPeriod = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 4;
-	  var dayOffPerWeek = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 1;
-	  var maxShiftHours = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : 24;
-	  var minHoursOffBetweenShifts = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : 8;
-
-	  undefined.maxHoursPerWeek = maxHoursPerWeek;
-	  undefined.weekPeriod = weekPeriod;
-	  undefined.dayOffPerWeek = dayOffPerWeek;
-	  undefined.maxShiftHours = maxShiftHours;
-	  undefined.minHoursOffBetweenShifts = minHoursOffBetweenShifts;
-
-	  undefined.dutyHoursLimit = function (dutyHours) {
-	    var isWithinLimit = false;
-
-	    if (dutyHours <= undefined.weekPeriod * undefined.maxHoursPerWeek) {
-	      isWithinLimit = true;
-	    }
-
-	    return isWithinLimit;
-	  };
-	};
-
-	exports.default = dutyHoursRules;
-
-/***/ },
+/* 546 */,
 /* 547 */
 /***/ function(module, exports) {
 
