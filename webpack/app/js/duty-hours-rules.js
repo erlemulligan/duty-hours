@@ -13,7 +13,7 @@ const dutyHoursRules = (
   this.maxShiftHours = maxShiftHours;
   this.minHoursOffBetweenShifts = minHoursOffBetweenShifts;
 
-  this.dutyHoursLimit = (dutyHours) => {
+  this.withinDutyHoursLimit = (dutyHours) => {
     let isWithinLimit = false;
 
     if (dutyHours <= ((this.weekPeriod * this.maxHoursPerWeek))) {
@@ -21,6 +21,36 @@ const dutyHoursRules = (
     }
 
     return isWithinLimit;
+  };
+
+  this.hadRequiredTimeOff = (consecutiveHoursOff) => {
+    let withinRequiredTimeOff = false;
+
+    if (consecutiveHoursOff >= this.dayOffPerWeek * 24) {
+      withinRequiredTimeOff = true;
+    }
+
+    return withinRequiredTimeOff;
+  };
+
+  this.isWithinShiftMaximumHours = (dutyShiftHours) => {
+    let withInMaxHours = false;
+
+    if (dutyShiftHours <= this.maxShiftHours) {
+      withInMaxHours = true;
+    }
+
+    return withInMaxHours;
+  };
+
+  this.hasMinimumTimeOffBetweenShifts = (timeOffBetweenShifts) => {
+    let hadMinTimeOff = false;
+
+    if (timeOffBetweenShifts < minHoursOffBetweenShifts) {
+      hadMinTimeOff = true;
+    }
+
+    return hadMinTimeOff;
   };
 };
 
